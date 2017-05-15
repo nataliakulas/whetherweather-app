@@ -4,7 +4,6 @@ import jsonp from 'superagent-jsonp';
 export function getWeatherData(units, coords) {
     const deferred = Promise.defer();
     const parsedUnits = units === 'C' ? 'metric' : 'imperial';
-
     superagent.get('http://api.openweathermap.org/data/2.5/weather')
         .query({
             units: parsedUnits,
