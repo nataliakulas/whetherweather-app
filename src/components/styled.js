@@ -1,21 +1,23 @@
 import styled from 'styled-components';
 
-const Title = styled.h1`
+export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
 `;
 
-const Wrapper = styled.section`
+export const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
   text-align: center;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   /* Adapt the colors based on primary prop */
   background: ${props => props.primary ? 'palevioletred' : 'white'};
   color: ${props => props.primary ? 'white' : 'palevioletred'};
+
+  width: 200px;
 
   font-size: 1em;
   margin: 1em;
@@ -24,7 +26,7 @@ const Button = styled.button`
   border-radius: 3px;
 `;
 
-const Paragraph = styled.p`
+export const Paragraph = styled.p`
   font-size: 1em;
   text-align: center;
   color: palevioletred;
