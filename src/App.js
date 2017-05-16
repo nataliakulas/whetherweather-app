@@ -1,5 +1,39 @@
 import React, {Component} from 'react';
 
+import styled from 'styled-components';
+import Grid from 'grid-styled'
+
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+  text-align: center;
+`;
+
+const Button = styled.button`
+  /* Adapt the colors based on primary prop */
+  background: ${props => props.primary ? 'palevioletred' : 'white'};
+  color: ${props => props.primary ? 'white' : 'palevioletred'};
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+const Paragraph = styled.p`
+  font-size: 1em;
+  text-align: center;
+  color: palevioletred;
+`
+
 const lastUpdate = new Date().toString();
 
 const cities = {
@@ -18,20 +52,21 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>This is Whether Weather App!</h1>
-
-                {
-                    Object.keys(cities).map(function (cityName, index) {
-                            return (
-                                <div className="city-name">{cityName.toUpperCase()}</div>
+                <Grid>
+                    <Wrapper>
+                        <Title>This is Whether Weather App!</Title>
+                        {
+                            Object.keys(cities).map(function (cityName, index) {
+                                    return (
+                                        <div className="city-name"><Button>{cityName.toUpperCase()}</Button></div>
+                                    )
+                                }
                             )
                         }
-                    )
-                }
-
-                <p>Last updated at: {lastUpdate}</p>
+                        <Paragraph>Last updated at: {lastUpdate}</Paragraph>
+                    </Wrapper>
+                </Grid>
             </div>
-
         );
     }
 }
