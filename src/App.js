@@ -19,6 +19,16 @@ class App extends Component {
         return (
             <div>
                 <h1>This is Whether Weather App!</h1>
+
+                {
+                    Object.keys(cities).map(function (cityName, index) {
+                            return (
+                                <div className="city-name">{cityName.toUpperCase()}</div>
+                            )
+                        }
+                    )
+                }
+
                 <p>Last updated at: {lastUpdate}</p>
             </div>
 
