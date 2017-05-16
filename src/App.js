@@ -25,11 +25,11 @@ class App extends Component {
                     <Wrapper>
                         <Title>This is Whether Weather App!</Title>
                         {
-                            Object.keys(cities).map(function (cityName, index) {
-                                    return (
-                                        <div className="city-name"><Button>{cityName.toUpperCase()}</Button></div>
-                                    )
-                                }
+                            Object.keys(cities).map((cityName, index) => (
+                                    <div className="city-name">
+                                        <Button onClick={''}>{cityName.toUpperCase()}</Button>
+                                    </div>
+                                )
                             )
                         }
                         <Paragraph>Last updated at: {lastUpdate}</Paragraph>
@@ -37,7 +37,7 @@ class App extends Component {
                 </Grid>
             </div>
         );
-    }
+    };
 }
 
 export default App;
