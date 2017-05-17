@@ -24,7 +24,7 @@ class App extends Component {
     handleClick(cityName) {
         $.ajax({
             url: "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012",
-            dataType: 'json',
+            dataType: 'jsonp',
             context: this,
             success: function (result) {
                 this.setState({
@@ -42,6 +42,16 @@ class App extends Component {
 
     render() {
         const lastUpdate = new Date().toString();
+        let weatherDetails;
+            if (this.state.cityName) {
+                console.log('inside if')
+                weatherDetails = <Paragraph>
+                                    Summary:&ensp;{this.state.weatherData.summary}&ensp;|&ensp;
+                                    Temperature:&ensp;{this.state.weatherData.temperature}&ensp;|&ensp;
+                                    Humidity:&ensp;{this.state.weatherData.humidity}&ensp;|&ensp;
+                                    Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;|&ensp;
+                                </Paragraph>
+            }
 
         return (
             <div>
@@ -59,7 +69,8 @@ class App extends Component {
                             )
                         }
                         <div>
-                            {/*{weatherData}*/}
+                            <Paragraph>Weather Details: </Paragraph>
+                            {weatherDetails}
                         </div>
                         <Paragraph>Last updated at: {lastUpdate}</Paragraph>
                     </Wrapper>
