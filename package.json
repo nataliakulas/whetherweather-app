@@ -5,6 +5,7 @@
   "dependencies": {
     "grid-styled": "^1.0.1",
     "jquery": "^3.2.1",
+    "lato-font-face": "^1.1.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "styled-components": "^1.4.6"
