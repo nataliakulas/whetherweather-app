@@ -47,9 +47,9 @@ class App extends Component {
                 console.log('inside if')
                 weatherDetails = <Paragraph>
                                     Summary:&ensp;{this.state.weatherData.summary}&ensp;|&ensp;
-                                    Temperature:&ensp;{this.state.weatherData.temperature}&ensp;|&ensp;
-                                    Humidity:&ensp;{this.state.weatherData.humidity}&ensp;|&ensp;
-                                    Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;|&ensp;
+                                    Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°F&ensp;|&ensp;
+                                    Humidity:&ensp;{this.state.weatherData.humidity}&ensp;%&ensp;|&ensp;
+                                    Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;m/s&ensp;|&ensp;
                                 </Paragraph>
             }
 
