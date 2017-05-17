@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
 
 import Grid from 'grid-styled'
 import {Title, Wrapper, Button, Paragraph} from './components/styled';
@@ -10,15 +11,33 @@ class App extends Component {
         super(props);
 
         this.state = {
-            cityName: ''
+            cityName: '',
+            weatherData: {
+                'summary': '',
+                'temperature': '',
+                'humidity': '',
+                'windSpeed': ''
+            }
         };
     }
 
     handleClick(cityName) {
-        // console.log('this is:', this);
-        this.setState({
-            cityName: cityName
-        });
+        $.ajax({
+            url: "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012",
+            dataType: 'json',
+            context: this,
+            success: function (result) {
+                this.setState({
+                    cityName: cityName,
+                    weatherData: {
+                        'summary': result['currently']['summary'],
+                        'temperature': result['currently']['temperature'],
+                        'humidity': result['currently']['humidity'],
+                        'windSpeed': result['currently']['windSpeed']
+                    }
+                });
+            }
+        })
     }
 
     render() {
@@ -39,6 +58,9 @@ class App extends Component {
                                 )
                             )
                         }
+                        <div>
+                            {/*{weatherData}*/}
+                        </div>
                         <Paragraph>Last updated at: {lastUpdate}</Paragraph>
                     </Wrapper>
                 </Grid>
