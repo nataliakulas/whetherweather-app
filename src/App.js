@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import $ from 'jquery';
 
 import Grid from 'grid-styled'
-import {Title, Subtitle, Wrapper, Button, Paragraph} from './components/styled';
+import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
+
+import fonts from './assets/fonts.css'
 
 import data from '../public/data/cities.json'
 
@@ -53,30 +55,32 @@ class App extends Component {
         }
 
         return (
-            <div>
-                <Grid>
-                    <Wrapper>
-                        <Title>Whether Weather App</Title>
-                        <Subtitle>Displays local weather. Whether it's good or bad.</Subtitle>
-                        <div>
-                            {
-                                Object.keys(data).map((cityName, index) => (
+            <Grid>
+                <Wrapper>
+                    <Title>Whether Weather App</Title>
 
-                                        <Button onClick={(cityName) => this.handleClick(cityName)}>
-                                            {cityName.toUpperCase()}
-                                        </Button>
-                                    )
+                    <Subtitle>Displays local weather. Whether it's good or bad.</Subtitle>
+
+                    <Box>
+                        {
+                            Object.keys(data).map((cityName, index) => (
+
+                                    <Button onClick={(cityName) => this.handleClick(cityName)}>
+                                        {cityName.toUpperCase()}
+                                    </Button>
                                 )
-                            }
-                        </div>
-                        <div>
-                            <Paragraph>Weather Details: </Paragraph>
-                            {weatherDetails}
-                        </div>
-                        <Paragraph>Last updated at: {lastUpdate}</Paragraph>
-                    </Wrapper>
-                </Grid>
-            </div>
+                            )
+                        }
+                    </Box>
+
+                    <Row>
+                        <Paragraph>Actual weather Details: </Paragraph>
+                        {weatherDetails}
+                    </Row>
+
+                    <Paragraph>Last updated at: {lastUpdate}</Paragraph>
+                </Wrapper>
+            </Grid>
         );
     };
 }
