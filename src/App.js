@@ -12,11 +12,10 @@ class App extends Component {
         this.state = {
             cityName: ''
         };
-
     }
 
     handleClick(cityName) {
-        console.log('this is:', this);
+        // console.log('this is:', this);
         this.setState({
             cityName: cityName
         });
@@ -32,9 +31,8 @@ class App extends Component {
                         <Title>This is Whether Weather App!</Title>
                         {
                             Object.keys(cities).map((cityName, index) => (
-                                    <div className="city-name">
-                                        <Button className="primary"
-                                                onClick={(cityName) => this.handleClick(cityName)}>
+                                    <div>
+                                        <Button onClick={(cityName) => this.handleClick(cityName)}>
                                             {cityName.toUpperCase()}
                                         </Button>
                                     </div>
