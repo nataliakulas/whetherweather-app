@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import $ from 'jquery';
 
 import Grid from 'grid-styled'
 import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
 
-import styles from './assets/global.css'
+import './assets/global.css'
 
 import data from '../public/data/cities.json'
 
@@ -24,22 +23,34 @@ class App extends Component {
     }
 
     handleClick(cityName) {
-        $.ajax({
-            url: "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012",
-            dataType: 'jsonp',
-            context: this,
-            success: function (result) {
-                this.setState({
-                    cityName: cityName,
-                    weatherData: {
-                        'summary': result['currently']['summary'],
-                        'temperature': result['currently']['temperature'],
-                        'humidity': result['currently']['humidity'],
-                        'windSpeed': result['currently']['windSpeed']
-                    }
-                });
+        fetch(
+            "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012", {
+                method: 'get',
+                mode: 'cors',
+                redirect: 'follow',
+                headers: new Headers({
+                    'Content-Type': 'text/plain'
+                })
+                // dataType: 'jsonp',
+                // context: this
             }
-        })
+        ).then(function (response) {
+                if (response.ok) {
+                    return response.json().then(function (result) {
+                            this.setState({
+                                cityName: cityName,
+                                weatherData: {
+                                    'summary': result['currently']['summary'],
+                                    'temperature': result['currently']['temperature'],
+                                    'humidity': result['currently']['humidity'],
+                                    'windSpeed': result['currently']['windSpeed']
+                                }
+                            })
+                        }
+                    )
+                }
+            }
+        );
     }
 
     render() {
