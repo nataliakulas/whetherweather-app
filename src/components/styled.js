@@ -44,9 +44,13 @@ export const Button = styled.button`
   
   outline: none;
   
-  &:focus{
-  background: #9f77aa;
+  &:hover, 
+  &:focus {
   border: 1px solid #9f77aa;
+  }
+  
+  &:focus {
+  background: #9f77aa;
   }
 `;
 
