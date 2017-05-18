@@ -51,7 +51,7 @@ class App extends Component {
             weatherDetails = <Paragraph>
                 Summary:&ensp;{this.state.weatherData.summary}&ensp;|&ensp;
                 Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°C&ensp;|&ensp;
-                Humidity:&ensp;{(this.state.weatherData.humidity) = (this.state.weatherData.humidity * 100)}&ensp;%&ensp;|&ensp;
+                Humidity:&ensp;{this.state.weatherData.humidity * 100}&ensp;%&ensp;|&ensp;
                 Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;m/s&ensp;|&ensp;
             </Paragraph>
         }
