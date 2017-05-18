@@ -5,7 +5,9 @@ import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './component
 
 import './assets/global.css'
 
-import data from '../public/data/cities.json'
+// import data from '../public/data/cities.json'
+
+import data from './data'
 
 class App extends Component {
     constructor(props) {
@@ -68,12 +70,16 @@ class App extends Component {
 
                     <Box>
                         {
-                            Object.keys(data).map((cityName, index) => (
-                                    <Button onClick={(cityName) => this.handleClick(cityName)}>
-                                        {cityName.toUpperCase()}
-                                    </Button>
+                            data.cities === undefined ?
+                                <Paragraph>Sorry, you need to wait</Paragraph> :
+                                data.cities.map(
+                                    city => (
+                                        <Button key={city.id}
+                                                onClick={(cityName) => this.handleClick(cityName)}>
+                                            {city.name.toUpperCase()}
+                                        </Button>
+                                    )
                                 )
-                            )
                         }
                     </Box>
 
