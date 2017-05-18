@@ -3,16 +3,13 @@ import React, {Component} from 'react';
 import Grid from 'grid-styled'
 import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
 
+import {url, key, coordinates, units} from './ajax/Api.js'
+
 import './assets/global.css'
 
 // import data from '../public/data/cities.json'
 
 import data from './data'
-
-const url = "https://api.darksky.net/forecast/";
-const key = "07b2a30b3f049c6c5472768beea2b2f9/";
-const coordinates = "52.229,21.012";
-const units = "?units=si";
 
 class App extends Component {
     constructor(props) {
