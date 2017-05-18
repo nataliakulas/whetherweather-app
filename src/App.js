@@ -19,7 +19,8 @@ class App extends Component {
                 'summary': '',
                 'temperature': '',
                 'humidity': '',
-                'windSpeed': ''
+                'windSpeed': '',
+                'pressure': ''
             }
         };
     }
@@ -39,7 +40,8 @@ class App extends Component {
                                     'summary': result['currently']['summary'],
                                     'temperature': result['currently']['temperature'],
                                     'humidity': result['currently']['humidity'],
-                                    'windSpeed': result['currently']['windSpeed']
+                                    'windSpeed': result['currently']['windSpeed'],
+                                    'pressure': result['currently']['pressure']
                                 }
                             })
                         }
@@ -58,6 +60,7 @@ class App extends Component {
                 Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°C&ensp;|&ensp;
                 Humidity:&ensp;{this.state.weatherData.humidity * 100}&ensp;%&ensp;|&ensp;
                 Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;m/s&ensp;|&ensp;
+                Pressure:&ensp;{this.state.weatherData.pressure}&ensp;hPa&ensp;|&ensp;
             </Paragraph>
         }
 
@@ -70,16 +73,14 @@ class App extends Component {
 
                     <Box>
                         {
-                            data.cities === undefined ?
-                                <Paragraph>Sorry, you need to wait</Paragraph> :
-                                data.cities.map(
-                                    city => (
-                                        <Button key={city.id}
-                                                onClick={(cityName) => this.handleClick(cityName)}>
-                                            {city.name.toUpperCase()}
-                                        </Button>
-                                    )
+                            data.cities.map(
+                                city => (
+                                    <Button key={city.id}
+                                            onClick={(cityName) => this.handleClick(cityName)}>
+                                        {city.name.toUpperCase()}
+                                    </Button>
                                 )
+                            )
                         }
                     </Box>
 
