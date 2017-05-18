@@ -24,7 +24,10 @@ class App extends Component {
 
     handleClick(cityName) {
         fetch(
-            "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012" + "?units=si"
+            "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012" + "?units=si",
+            {
+                method: 'GET',
+            }
         ).then(response => {
                 if (response.ok) {
                     return response.json().then(result => {
