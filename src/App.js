@@ -24,19 +24,10 @@ class App extends Component {
 
     handleClick(cityName) {
         fetch(
-            "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012", {
-                method: 'get',
-                mode: 'cors',
-                redirect: 'follow',
-                headers: new Headers({
-                    'Content-Type': 'text/plain'
-                })
-                // dataType: 'jsonp',
-                // context: this
-            }
-        ).then(function (response) {
+            "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012" + "?units=si"
+        ).then(response => {
                 if (response.ok) {
-                    return response.json().then(function (result) {
+                    return response.json().then(result => {
                             this.setState({
                                 cityName: cityName,
                                 weatherData: {
@@ -59,7 +50,7 @@ class App extends Component {
         if (this.state.cityName) {
             weatherDetails = <Paragraph>
                 Summary:&ensp;{this.state.weatherData.summary}&ensp;|&ensp;
-                Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°F&ensp;|&ensp;
+                Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°C&ensp;|&ensp;
                 Humidity:&ensp;{this.state.weatherData.humidity}&ensp;%&ensp;|&ensp;
                 Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;m/s&ensp;|&ensp;
             </Paragraph>
@@ -75,7 +66,6 @@ class App extends Component {
                     <Box>
                         {
                             Object.keys(data).map((cityName, index) => (
-
                                     <Button onClick={(cityName) => this.handleClick(cityName)}>
                                         {cityName.toUpperCase()}
                                     </Button>
