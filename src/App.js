@@ -25,7 +25,7 @@ class App extends Component {
 
     handleClick(cityName) {
         $.ajax({
-            url: "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012",
+            url: "https://api.darksky.net/forecast/07b2a30b3f049c6c5472768beea2b2f9/" + "52.229,21.012" + "?units=si",
             dataType: 'jsonp',
             context: this,
             success: function (result) {
@@ -48,7 +48,7 @@ class App extends Component {
         if (this.state.cityName) {
             weatherDetails = <Paragraph>
                 Summary:&ensp;{this.state.weatherData.summary}&ensp;|&ensp;
-                Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°F&ensp;|&ensp;
+                Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°C&ensp;|&ensp;
                 Humidity:&ensp;{this.state.weatherData.humidity}&ensp;%&ensp;|&ensp;
                 Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;m/s&ensp;|&ensp;
             </Paragraph>
