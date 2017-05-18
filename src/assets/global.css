@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-
 body {
+    margin: 0;
+    background-color: #67b8cb;
+
     font-family: 'Lato', 'Open Sans', sans-serif;
     font-weight: 300;
 }

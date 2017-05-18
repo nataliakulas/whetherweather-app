@@ -4,7 +4,7 @@ import $ from 'jquery';
 import Grid from 'grid-styled'
 import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
 
-import fonts from './assets/fonts.css'
+import styles from './assets/global.css'
 
 import data from '../public/data/cities.json'
 

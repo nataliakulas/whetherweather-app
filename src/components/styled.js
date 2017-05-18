@@ -2,19 +2,16 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
   font-size: 1.7em;
-  text-align: center;
   color: #ffffff;
 `;
 
 export const Subtitle = styled.h2`
   font-size: 1.5em;
-  text-align: center;
   color: #ffffff;
   `;
 
 export const Wrapper = styled.section`
   padding: 4em;
-  background: #67b8cb;
   text-align: center;
 
 `;
