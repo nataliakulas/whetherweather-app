@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 import Grid from 'grid-styled'
-import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
+import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled'
 
 import {url, key, name} from './ajax/Api.js'
 
