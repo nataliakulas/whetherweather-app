@@ -1,10 +1,5 @@
-import data from '../../public/data/cities.json'
+export const url = "https://api.darksky.net/forecast/";
+export const key = "07b2a30b3f049c6c5472768beea2b2f9/";
+export const coordinates = "52.229,21.012";
+export const units = "?units=si";
 
-export const url = "http://api.apixu.com/v1/current.json?key=";
-export const key = "b18b14ba85b043e89db130626171705";
-
-export let name = () => {
-    data.map(
-        city => (city.name)
-    )
-};
