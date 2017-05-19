@@ -57,7 +57,7 @@ class App extends Component {
         let weatherDetails;
         if (this.state.cityName) {
             weatherDetails = <Paragraph>
-                Summary:&ensp;{this.state.weatherData.contition}&ensp;|&ensp;
+                Summary:&ensp;{this.state.weatherData.condition}&ensp;|&ensp;
                 Temperature:&ensp;{this.state.weatherData.temp_c}&ensp;°C&ensp;|&ensp;
                 Humidity:&ensp;{this.state.weatherData.humidity}&ensp;%&ensp;|&ensp;
                 Wind Speed:&ensp;{this.state.weatherData.wind_kph}&ensp;km/h&ensp;|&ensp;

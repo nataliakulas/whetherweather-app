@@ -1,6 +1,6 @@
 {
   "name": "whetherweatherapp",
-  "homepage": "https://nataliakulas.github.io/whetherweather-app",
+  "homepage": "http://nataliakulas.github.io/whetherweather-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
