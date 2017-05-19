@@ -2,18 +2,15 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
   font-size: 1.7em;
-  color: #ffffff;
 `;
 
 export const Subtitle = styled.h2`
   font-size: 1.5em;
-  color: #ffffff;
-  `;
+`;
 
 export const Wrapper = styled.section`
   padding: 4em;
   text-align: center;
-
 `;
 
 export const Box = styled.div`  
@@ -34,6 +31,9 @@ export const Button = styled.button`
   height: 180px;
 
   font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  
   margin: 1em;
   padding: 0.25em 1em;
   border: 1px solid  #a2d4de;
@@ -53,6 +53,4 @@ export const Button = styled.button`
 
 export const Paragraph = styled.p`
   font-size: 1.3em;
-  text-align: center;
-  color: #ffffff;
 `;

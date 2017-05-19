@@ -5,6 +5,6 @@ export const key = "b18b14ba85b043e89db130626171705";
 
 export let name = () => {
     data.map(
-        city => (city.name)
+        city => (city.name[0])
     )
 };

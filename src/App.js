@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Grid from 'grid-styled'
-import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
+import { Title, Subtitle, Wrapper, Box, Row, Button, Paragraph } from './components/styled';
 
-import {url, key, name} from './ajax/Api.js'
+import { url, key, name } from './ajax/Api.js'
 
 import './assets/global.css'
 
@@ -28,7 +28,7 @@ class App extends Component {
 
     handleClick(cityName) {
         fetch(
-            url + key + "&q=" + name,
+            url + key + "&q=" + "warsaw",
             {
                 method: 'GET',
             }
@@ -61,7 +61,7 @@ class App extends Component {
                 Temperature:&ensp;{this.state.weatherData.temp_c}&ensp;°C&ensp;|&ensp;
                 Humidity:&ensp;{this.state.weatherData.humidity}&ensp;%&ensp;|&ensp;
                 Wind Speed:&ensp;{this.state.weatherData.wind_kph}&ensp;km/h&ensp;|&ensp;
-                Pressure:&ensp;{this.state.weatherData.pressure_mb}&ensp;hPa&ensp;|&ensp;
+                Pressure:&ensp;{this.state.weatherData.pressure_mb}&ensp;hPa
             </Paragraph>
         }
 
