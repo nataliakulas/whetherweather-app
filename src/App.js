@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 import Grid from 'grid-styled'
-import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
+import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled'
 
-import {url, key, name} from './ajax/Api.js'
+import {url, key, coordinates, units} from './ajax/Api.js'
 
 import './assets/global.css'
 
@@ -16,11 +16,11 @@ class App extends Component {
         this.state = {
             cityName: '',
             weatherData: {
-                "condition": '',
-                "temp_c": '',
+                'summary': '',
+                'temperature': '',
                 'humidity': '',
-                "wind_kph": '',
-                "pressure_mb": ''
+                'windSpeed': '',
+                'pressure': ''
             }
         };
     }
@@ -28,7 +28,7 @@ class App extends Component {
 
     handleClick(cityName) {
         fetch(
-            url + key + "&q=" + name,
+            url + key + coordinates + units,
             {
                 method: 'GET',
             }
@@ -38,11 +38,11 @@ class App extends Component {
                             this.setState({
                                 cityName: cityName,
                                 weatherData: {
-                                    "condition": result['current']['condition']['text'],
-                                    "temp_c": result['current']['temp_c'],
-                                    'humidity': result['current']['humidity'],
-                                    "wind_kph": result['current']['wind_kph'],
-                                    "pressure_mb": result['current']['pressure_mb']
+                                    'summary': result['currently']['summary'],
+                                    'temperature': result['currently']['temperature'],
+                                    'humidity': result['currently']['humidity'],
+                                    'windSpeed': result['currently']['windSpeed'],
+                                    'pressure': result['currently']['pressure']
                                 }
                             })
                         }
@@ -57,11 +57,11 @@ class App extends Component {
         let weatherDetails;
         if (this.state.cityName) {
             weatherDetails = <Paragraph>
-                Summary:&ensp;{this.state.weatherData.condition}&ensp;|&ensp;
-                Temperature:&ensp;{this.state.weatherData.temp_c}&ensp;°C&ensp;|&ensp;
-                Humidity:&ensp;{this.state.weatherData.humidity}&ensp;%&ensp;|&ensp;
-                Wind Speed:&ensp;{this.state.weatherData.wind_kph}&ensp;km/h&ensp;|&ensp;
-                Pressure:&ensp;{this.state.weatherData.pressure_mb}&ensp;hPa&ensp;|&ensp;
+                Summary:&ensp;{this.state.weatherData.summary}&ensp;|&ensp;
+                Temperature:&ensp;{this.state.weatherData.temperature}&ensp;°C&ensp;|&ensp;
+                Humidity:&ensp;{this.state.weatherData.humidity * 100}&ensp;%&ensp;|&ensp;
+                Wind Speed:&ensp;{this.state.weatherData.windSpeed}&ensp;m/s&ensp;|&ensp;
+                Pressure:&ensp;{this.state.weatherData.pressure}&ensp;hPa&ensp;|&ensp;
             </Paragraph>
         }
 
