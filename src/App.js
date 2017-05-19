@@ -7,9 +7,7 @@ import {url, key, coordinates, units} from './ajax/Api.js'
 
 import './assets/global.css'
 
-// import data from '../public/data/cities.json'
-
-import data from './data'
+import data from '../public/data/cities.json'
 
 class App extends Component {
     constructor(props) {
@@ -76,7 +74,7 @@ class App extends Component {
 
                     <Box>
                         {
-                            data.cities.map(
+                            data.map(
                                 city => (
                                     <Button key={city.id}
                                             onClick={(cityName) => this.handleClick(cityName)}>
