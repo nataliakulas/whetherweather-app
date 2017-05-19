@@ -1,47 +1,38 @@
 [
   {
-    "id": 1,
-    "name": "warszawa",
-    "coordinates": "52.229,21.012"
+    "id": "1",
+    "name": "warszawa"
   },
   {
     "id": 2,
-    "name": "gdańsk",
-    "coordinates": "54.352,18.646"
+    "name": "gdańsk"
   },
   {
     "id": 3,
-    "name": "sopot",
-    "coordinates": "54.441,18.560"
+    "name": "sopot"
   },
   {
     "id": 4,
-    "name": "gdynia",
-    "coordinates": "54.519,18.530"
+    "name": "gdynia"
   },
   {
     "id": 5,
-    "name": "bydgoszcz",
-    "coordinates": "53.123,18.008"
+    "name": "bydgoszcz"
   },
   {
     "id": 6,
-    "name": "toruń",
-    "coordinates": "53.014,18.598"
+    "name": "toruń"
   },
   {
     "id": 7,
-    "name": "poznań",
-    "coordinates": "52.406,16.925"
+    "name": "poznań"
   },
   {
     "id": 8,
-    "name": "szczecin",
-    "coordinates": "53.428,14.553"
+    "name": "szczecin"
   },
   {
     "id": 9,
-    "name": "świnoujście",
-    "coordinates": "53.910,14.247"
+    "name": "świnoujście"
   }
 ]
