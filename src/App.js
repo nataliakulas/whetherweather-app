@@ -13,8 +13,8 @@ class App extends Component {
     constructor() {
         super();
 
-
         this.state = {
+            className: '',
             city: '',
             weatherData: {
                 "condition": '',
@@ -26,7 +26,6 @@ class App extends Component {
         };
     }
 
-
     handleClick(city) {
         fetch(
             url + key + "&q=" + city,
@@ -37,6 +36,7 @@ class App extends Component {
                 if (response.ok) {
                     return response.json().then(result => {
                             this.setState({
+                                className: 'selected',
                                 city: city,
                                 weatherData: {
                                     "condition": result['current']['condition']['text'],
@@ -65,6 +65,7 @@ class App extends Component {
                 Pressure:&ensp;{this.state.weatherData.pressure_mb}&ensp;hPa
             </Paragraph>
         }
+
         return (
             <Grid>
                 <Wrapper>
@@ -76,11 +77,12 @@ class App extends Component {
                         {
                             data.map(
                                 city => (
-                                    <Button className=""
+                                    <Button className={this.state.className}
                                             key={city.id}
                                             onClick={this.handleClick.bind(this, city.name)}>
                                         {city.name.toUpperCase()}
                                     </Button>
+
                                 )
                             )
                         }

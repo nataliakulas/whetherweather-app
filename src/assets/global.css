@@ -11,4 +11,5 @@ body {
 
 .selected {
     background-color: #9f77aa;
+    border: 1px solid #9f77aa;
 }
