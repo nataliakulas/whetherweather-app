@@ -47,10 +47,12 @@ export const Button = styled.button`
   }
   
   &:focus {
-  background: #9f77aa;
+  // background: #9f77aa;
   }
 `;
 
 export const Paragraph = styled.p`
   font-size: 1.3em;
 `;
+
+

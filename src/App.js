@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Grid from 'grid-styled'
-import { Title, Subtitle, Wrapper, Box, Row, Button, Paragraph } from './components/styled';
+import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
 
-import { url, key, name } from './ajax/Api.js'
+import {url, key} from './ajax/Api.js'
 
 import './assets/global.css'
 
 import data from '../public/data/cities.json'
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
+
 
         this.state = {
-            cityName: '',
+            city: '',
             weatherData: {
                 "condition": '',
                 "temp_c": '',
@@ -26,9 +27,9 @@ class App extends Component {
     }
 
 
-    handleClick(cityName) {
+    handleClick(city) {
         fetch(
-            url + key + "&q=" + "warsaw",
+            url + key + "&q=" + city,
             {
                 method: 'GET',
             }
@@ -36,7 +37,7 @@ class App extends Component {
                 if (response.ok) {
                     return response.json().then(result => {
                             this.setState({
-                                cityName: cityName,
+                                city: city,
                                 weatherData: {
                                     "condition": result['current']['condition']['text'],
                                     "temp_c": result['current']['temp_c'],
@@ -55,7 +56,7 @@ class App extends Component {
     render() {
         const lastUpdate = new Date().toString();
         let weatherDetails;
-        if (this.state.cityName) {
+        if (this.state.city) {
             weatherDetails = <Paragraph>
                 Summary:&ensp;{this.state.weatherData.condition}&ensp;|&ensp;
                 Temperature:&ensp;{this.state.weatherData.temp_c}&ensp;°C&ensp;|&ensp;
@@ -64,7 +65,6 @@ class App extends Component {
                 Pressure:&ensp;{this.state.weatherData.pressure_mb}&ensp;hPa
             </Paragraph>
         }
-
         return (
             <Grid>
                 <Wrapper>
@@ -76,8 +76,9 @@ class App extends Component {
                         {
                             data.map(
                                 city => (
-                                    <Button key={city.id}
-                                            onClick={(cityName) => this.handleClick(cityName)}>
+                                    <Button className=""
+                                            key={city.id}
+                                            onClick={this.handleClick.bind(this, city.name)}>
                                         {city.name.toUpperCase()}
                                     </Button>
                                 )
@@ -94,6 +95,7 @@ class App extends Component {
                 </Wrapper>
             </Grid>
         );
+
     };
 }
 
