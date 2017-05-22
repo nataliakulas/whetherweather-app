@@ -54,5 +54,3 @@ export const Button = styled.button`
 export const Paragraph = styled.p`
   font-size: 1.3em;
 `;
-
-
