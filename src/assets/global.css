@@ -8,3 +8,8 @@ body {
     font-weight: 300;
     color: #ffffff;
 }
+
+img {
+    width: 24px;
+    vertical-align: text-bottom;
+}
