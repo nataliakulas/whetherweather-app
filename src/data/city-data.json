@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "warszawa"
+  },
+  {
+    "id": 2,
+    "name": "gdańsk"
+  },
+  {
+    "id": 3,
+    "name": "sopot"
+  },
+  {
+    "id": 4,
+    "name": "gdynia"
+  },
+  {
+    "id": 5,
+    "name": "bydgoszcz"
+  },
+  {
+    "id": 6,
+    "name": "toruń"
+  },
+  {
+    "id": 7,
+    "name": "poznań"
+  },
+  {
+    "id": 8,
+    "name": "szczecin"
+  },
+  {
+    "id": 9,
+    "name": "świnoujście"
+  }
+]
