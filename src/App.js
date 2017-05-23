@@ -2,18 +2,18 @@ import React, {Component} from 'react';
 import Img from 'react-image';
 
 import Grid from 'grid-styled'
-import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './components/styled';
+import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './assets/styled';
 
 import {url, key} from './ajax/Api.js'
 
 import './assets/global.css'
 
-import data from './data/city-data.json'
-import windData from './data/wind-data'
+import data from './assets/data/city-data.json'
+import windData from './assets/data/wind-data'
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             city: '',
@@ -58,16 +58,17 @@ class App extends Component {
     render() {
         const lastUpdate = new Date().toString();
 
+
         let windDir;
         switch (this.state.weatherData.wind_dir) {
             case 'N':
                 windDir = windData.N;
-                break;
+                                break;
             case 'NNE':
                 windDir = windData.NNE;
                 break;
             case 'NE':
-                windDir = windData.NE;
+               windDir = windData.NE;
                 break;
             case 'ENE':
                 windDir = windData.ENE;
@@ -75,8 +76,8 @@ class App extends Component {
             case 'E':
                 windDir = windData.E;
                 break;
-            case 'ESE':
-                windDir = windData.ESE;
+           case 'ESE':
+               windDir = windData.ESE;
                 break;
             case 'SE':
                 windDir = windData.SE;
