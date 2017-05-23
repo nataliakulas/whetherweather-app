@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import Img from 'react-image';
 
-import Grid from 'grid-styled'
-import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './assets/styled';
+import Grid from 'grid-styled';
+import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './assets/Styled';
 
-import {url, key} from './ajax/Api.js'
+import {url, key} from './ajax/Api.js';
 
-import './assets/global.css'
+import './assets/global.css';
 
-import data from './assets/data/city-data.json'
-import windData from './assets/data/wind-data'
+import data from './assets/data/city-data.json';
+import windData from './assets/data/wind-data';
 
 class App extends Component {
     constructor(props) {
