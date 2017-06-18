@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 10px;
 }

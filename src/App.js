@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Img from 'react-image';
 
-import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './assets/Styled';
+import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './assets/styled/Styled';
 
 import {url, key} from './ajax/Api.js';
 
@@ -34,24 +34,22 @@ class App extends Component {
                 method: 'GET',
             }
         ).then(response => {
-                if (response.ok) {
-                    return response.json().then(result => {
-                            this.setState({
-                                city: city,
-                                weatherData: {
-                                    "condition": result['current']['condition']['text'],
-                                    "temp_c": result['current']['temp_c'],
-                                    'humidity': result['current']['humidity'],
-                                    "wind_kph": result['current']['wind_kph'],
-                                    "wind_dir": result['current']['wind_dir'],
-                                    "pressure_mb": result['current']['pressure_mb']
-                                }
-                            })
+            if (response.ok) {
+                return response.json().then(result => {
+                    this.setState({
+                        city: city,
+                        weatherData: {
+                            "condition": result['current']['condition']['text'],
+                            "temp_c": result['current']['temp_c'],
+                            'humidity': result['current']['humidity'],
+                            "wind_kph": result['current']['wind_kph'],
+                            "wind_dir": result['current']['wind_dir'],
+                            "pressure_mb": result['current']['pressure_mb']
                         }
-                    )
-                }
+                    })
+                })
             }
-        );
+        });
     }
 
     render() {
@@ -148,9 +146,8 @@ class App extends Component {
                     {weatherDetails}
                 </Row>
 
-                <Paragraph>Last updated at: {lastUpdate}</Paragraph>
+                <Paragraph small>Last updated at: {lastUpdate}</Paragraph>
             </Wrapper>
-
         );
     };
 }
