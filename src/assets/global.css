@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+html {
+    font-size: 10px;
+}
+
 body {
     margin: 0;
     background-color: #67b8cb;
@@ -10,6 +14,7 @@ body {
 }
 
 img {
-    width: 24px;
+    width: 16px;
     vertical-align: text-bottom;
 }
+

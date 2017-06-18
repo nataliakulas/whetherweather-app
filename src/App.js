@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Img from 'react-image';
 
-import Grid from 'grid-styled';
 import {Title, Subtitle, Wrapper, Box, Row, Button, Paragraph} from './assets/Styled';
 
 import {url, key} from './ajax/Api.js';
@@ -56,19 +55,19 @@ class App extends Component {
     }
 
     render() {
-        const lastUpdate = new Date().toString();
+        const lastUpdate = new Date().toLocaleString();
 
 
         let windDir;
         switch (this.state.weatherData.wind_dir) {
             case 'N':
                 windDir = windData.N;
-                                break;
+                break;
             case 'NNE':
                 windDir = windData.NNE;
                 break;
             case 'NE':
-               windDir = windData.NE;
+                windDir = windData.NE;
                 break;
             case 'ENE':
                 windDir = windData.ENE;
@@ -76,8 +75,8 @@ class App extends Component {
             case 'E':
                 windDir = windData.E;
                 break;
-           case 'ESE':
-               windDir = windData.ESE;
+            case 'ESE':
+                windDir = windData.ESE;
                 break;
             case 'SE':
                 windDir = windData.SE;
@@ -116,43 +115,42 @@ class App extends Component {
         let weatherDetails;
         if (this.state.city) {
             weatherDetails = <Paragraph>
-                Summary:&ensp;{this.state.weatherData.condition}&ensp;|&ensp;
-                Temperature:&ensp;{this.state.weatherData.temp_c}&ensp;°C&ensp;|&ensp;
-                Humidity:&ensp;{this.state.weatherData.humidity}&ensp;%&ensp;|&ensp;
-                Wind Speed:&ensp;{this.state.weatherData.wind_kph}&ensp;km/h&ensp;
-                <Img src={windDir}/>&ensp;|&ensp;
-                Pressure:&ensp;{this.state.weatherData.pressure_mb}&ensp;hPa
+                Summary:&nbsp;{this.state.weatherData.condition}&nbsp;|&nbsp;
+                Temperature:&nbsp;{this.state.weatherData.temp_c}&nbsp;°C&nbsp;|&nbsp;
+                Humidity:&nbsp;{this.state.weatherData.humidity}&nbsp;%&nbsp;|&nbsp;
+                Wind Speed:&nbsp;{this.state.weatherData.wind_kph}&nbsp;km/h&nbsp;
+                <Img src={windDir}/>&nbsp;|&nbsp;
+                Pressure:&nbsp;{this.state.weatherData.pressure_mb}&nbsp;hPa
             </Paragraph>
         }
 
         return (
-            <Grid>
-                <Wrapper>
-                    <Title>Whether Weather App</Title>
+            <Wrapper>
+                <Title>Whether Weather App</Title>
 
-                    <Subtitle>Displays local weather. Whether it's good or bad.</Subtitle>
+                <Subtitle>Displays local weather.<br/> Whether it's good or bad.</Subtitle>
 
-                    <Box>
-                        {
-                            data.map(
-                                city => (
-                                    <Button key={city.id}
-                                            onClick={this.handleClick.bind(this, city.name)}>
-                                        {city.name.toUpperCase()}
-                                    </Button>
-                                )
+                <Box>
+                    {
+                        data.map(
+                            city => (
+                                <Button key={city.id}
+                                        onClick={this.handleClick.bind(this, city.name)}>
+                                    {city.name.toUpperCase()}
+                                </Button>
                             )
-                        }
-                    </Box>
+                        )
+                    }
+                </Box>
 
-                    <Row>
-                        <Paragraph>Actual weather Details: </Paragraph>
-                        {weatherDetails}
-                    </Row>
+                <Row>
+                    <Paragraph><strong>Actual weather Details: </strong></Paragraph>
+                    {weatherDetails}
+                </Row>
 
-                    <Paragraph>Last updated at: {lastUpdate}</Paragraph>
-                </Wrapper>
-            </Grid>
+                <Paragraph>Last updated at: {lastUpdate}</Paragraph>
+            </Wrapper>
+
         );
     };
 }

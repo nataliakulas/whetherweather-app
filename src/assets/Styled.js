@@ -1,41 +1,41 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  font-size: 1.7em;
-`;
+  font-size: 2.5rem;
+  margin: 10px auto;
+  `;
 
 export const Subtitle = styled.h2`
-  font-size: 1.5em;
+  font-size: 2.0rem;
+  margin: 10px auto;
 `;
 
 export const Wrapper = styled.section`
-  padding: 4em;
+  padding: 10px;
   text-align: center;
 `;
 
 export const Box = styled.div`  
-  width: 760px;
-  display: inline-block;
+  height: 300px;  
 `;
 
 export const Row = styled.div`
-    height: 100px;
-    text-align: center;
+  height: 90px;
+  text-align: center;
 `;
 
 export const Button = styled.button`
   background: #a2d4de;
   color: #ffffff;
 
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
 
-  font-size: 1em;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   
-  margin: 1em;
-  padding: 0.25em 1em;
+  margin: 5px;
   border: 1px solid  #a2d4de;
   border-radius: 50%;
   
@@ -52,5 +52,6 @@ export const Button = styled.button`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 1.3em;
+  font-size: 1.4rem;
+  margin-bottom: 0;
 `;
